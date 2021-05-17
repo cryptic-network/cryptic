@@ -1,4 +1,4 @@
-![image](https://github.com/cryptic-network/cryptic/raw/master/src/config/logo-small.png)
+![image](https://raw.githubusercontent.com/cryptic-network/cryptic/main/src/config/logo-small.png)
 
 ```
 LICENSES:
