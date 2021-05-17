@@ -6,6 +6,7 @@
 
 const std::string asciiArt =
 "\n"
+"\n"
 "              `-::.                             \n"
 "              ooooo-                      `-:-  \n"
 "              /ooo+`               `     .oooo+ \n"
