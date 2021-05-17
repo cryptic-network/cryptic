@@ -13,7 +13,6 @@ LICENSES:
 
 ![Download Count](https://img.shields.io/github/downloads/cryptic-network/cryptic/total.svg)
 ![Open Issue Count](https://img.shields.io/github/issues/cryptic-network/cryptic)
-![License](https://img.shields.io/github/license/cryptic-network/cryptic)
 ![Version](https://img.shields.io/github/v/release/cryptic-network/cryptic)
 
 ****
