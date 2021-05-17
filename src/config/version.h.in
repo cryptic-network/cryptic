@@ -2,7 +2,7 @@
 #define STR(x) STR_HELPER(x)
 
 #define PROJECT_NAME "Cryptic"
-#define PROJECT_SITE "https://bitcoinmono.io"
+#define PROJECT_SITE "http://crypticnetwork.cf"
 #define PROJECT_COPYRIGHT "Copyright 2021, Cryptic"
 
 #define APP_VER_MAJOR 1

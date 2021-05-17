@@ -9,7 +9,7 @@ LICENSES:
 // Copyright (c) 2021, The Cryptic Developers
 ```
 
-**[Website](http://crypticnetwork.cf) | [Discord](https://discord.gg/ZKpuEYwB9g) | [Bitcoin Talk]()
+[Website](http://crypticnetwork.cf) | [Discord](https://discord.gg/ZKpuEYwB9g) | [Bitcoin Talk]()
 
 ![Download Count](https://img.shields.io/github/downloads/cryptic-network/cryptic/total.svg)
 ![Open Issue Count](https://img.shields.io/github/issues/cryptic-network/cryptic)
@@ -22,7 +22,7 @@ LICENSES:
 
 |Ticker|Decimals|Supply|Block Reward|Block Time|P2P Port|RPC Port|Service Port|Algo
 |--|--|--|--|--|--|--|--|--|
-|XCC|8|1,000,000|1 XCC|60 Seconds|17940|17941|17942|Argon2Id Chukwa|
+|XCC|8|1,000,000 XCC|1 XCC|60 Seconds|17940|17941|17942|Argon2Id Chukwa|
 
 ****
 

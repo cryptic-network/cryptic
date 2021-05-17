@@ -49,7 +49,7 @@ namespace CryptoNote
         static_assert(EMISSION_SPEED_FACTOR_V2 <= 8 * sizeof(uint64_t), "Bad EMISSION_SPEED_FACTOR_V2");
 
         const char GENESIS_COINBASE_TX_HEX[] = 
-            "00a003000021011661a117418fcebcff914e86f0914e858800194c3f36ac6699efdb8b488aa9b5";
+            "013201ff000180c2d72f029b2e4c0281c0b02e7c53291a94d1d0cbff8883f8024f5142ee494ffbbd0880712101f591d9c7ba40e13c0f182c6aacb08c1c047d7d1fcfd446504019faa59cf400d1";
 
         static_assert(
             sizeof(GENESIS_COINBASE_TX_HEX) / sizeof(*GENESIS_COINBASE_TX_HEX) != 1,
@@ -252,9 +252,9 @@ namespace CryptoNote
     const size_t BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT                     = 10000;    // by default, blocks ids count in synchronizing
     const uint64_t BLOCKS_SYNCHRONIZING_DEFAULT_COUNT                       = 20;       // by default, blocks count in blocks downloading
     const size_t COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT                      = 1000;
-    const int P2P_DEFAULT_PORT                                              = 11357;    // P2P Port
-    const int RPC_DEFAULT_PORT                                              = 11358;    // RPC Port
-    const int SERVICE_DEFAULT_PORT                                          = 11359;    // Service Port
+    const int P2P_DEFAULT_PORT                                              = 17940;    // P2P Port
+    const int RPC_DEFAULT_PORT                                              = 17941;    // RPC Port
+    const int SERVICE_DEFAULT_PORT                                          = 17942;    // Service Port
     const size_t P2P_LOCAL_WHITE_PEERLIST_LIMIT                             = 1000;
     const size_t P2P_LOCAL_GRAY_PEERLIST_LIMIT                              = 5000;
 
@@ -295,8 +295,7 @@ namespace CryptoNote
         {0xb2, 0x1d, 0x3b, 0x1d, 0x2d, 0x11, 0x22, 0x4a, 0x4a, 0x4a, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff}};
 
     const char *const SEED_NODES[] = {
-        "212.47.251.15:11357",
-        "163.172.135.150:11357",
-        "176.9.145.124:11357"
+        "62.171.158.41:17940",
+        "62.171.158.41:17950"
     };
 }
