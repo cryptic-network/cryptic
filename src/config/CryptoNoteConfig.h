@@ -22,22 +22,22 @@ namespace CryptoNote
         const uint64_t DIFFICULTY_TARGET                                    = 60;       // 60 Second block time
         const uint64_t CRYPTONOTE_PUBLIC_ADDRESS_BASE58_PREFIX              = 16820;    // XCC
         const uint32_t CRYPTONOTE_MAX_BLOCK_NUMBER                          = 500000000;
-        const size_t CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                         = 500000000;
-        const size_t CRYPTONOTE_MAX_TX_SIZE                                 = 1000000000;
+        const size_t   CRYPTONOTE_MAX_BLOCK_BLOB_SIZE                       = 500000000;
+        const size_t   CRYPTONOTE_MAX_TX_SIZE                               = 1000000000;
         const uint32_t CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW                 = 50;
         const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT                   = 6 * DIFFICULTY_TARGET;
         const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V3                = 6 * DIFFICULTY_TARGET;
         const uint64_t CRYPTONOTE_BLOCK_FUTURE_TIME_LIMIT_V4                = 6 * DIFFICULTY_TARGET;
-        const size_t BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW  = 11;
-        const size_t BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V3                   = 11;
+        const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW                    = 11;
+        const size_t   BLOCKCHAIN_TIMESTAMP_CHECK_WINDOW_V3                 = 11;
 
         // MONEY_SUPPLY - total number coins to be generated
         const uint64_t MONEY_SUPPLY                                         = UINT64_C(1'000'000'00000000); // 1 million XCC
         const uint64_t BLOCK_REWARD                                         = UINT64_C(1'00000000);         // 1.00000000 XCC
         const uint64_t GENESIS_BLOCK_REWARD                                 = UINT64_C(100'000'00000000);   // 100,000.00000000 XCC (1%) Premine
         const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                          = 0;
-        const size_t ZAWY_DIFFICULTY_V2                                     = 0;
-        const uint8_t ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION              = 3;
+        const size_t   ZAWY_DIFFICULTY_V2                                   = 0;
+        const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION             = 3;
         const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX                        = 0;
         const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V2                     = 0;
         const uint64_t LWMA_2_DIFFICULTY_BLOCK_INDEX_V3                     = 0;
@@ -71,7 +71,7 @@ namespace CryptoNote
         static_assert(CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE * 30 / 100 < CRYPTONOTE_BLOCK_REDUCTION_SIZE, "Reduction is too small.");
 
         const size_t CRYPTONOTE_DISPLAY_DECIMAL_POINT                       = 8;
-        const uint64_t MINIMUM_FEE = UINT64_C(5000000); // old fee - new fee v2 is 500 btcmz - 5000000 atomic unit
+        const uint64_t MINIMUM_FEE = UINT64_C(10000);
         
         /* New fee V2 */
         /* Fee per byte is rounded up in chunks. This helps makes estimates
@@ -84,14 +84,14 @@ namespace CryptoNote
          * something like 200 because it makes for pretty resulting fees
          * - 5 BTCMZ vs 5.12 BTCMZ. You can read this as.. the fee per chunk
          * is 512000 atomic units. The fee per byte is 512000 / chunk size. */
-        const double MINIMUM_FEE_PER_BYTE_V1                                = 105000.00 / FEE_PER_BYTE_CHUNK_SIZE; // 1 chunk = 10.5 BTCMZ fee - 1kB = 105000 * 4 = 42.0 BTCMZ
+        const double MINIMUM_FEE_PER_BYTE_V1                                = 10000 / FEE_PER_BYTE_CHUNK_SIZE; // 1 chunk = 0.0001 XCC fee - 1kB = 10000 * 4 = 0.0004 XCC
 
         /* Height for our first fee to byte change to take effect. */
         const uint64_t MINIMUM_FEE_PER_BYTE_V1_HEIGHT = 650000; // 650k
         
         /* Backward compatibility */
-        const uint64_t ACCEPTABLE_FEE                                       = UINT64_C(5000000);    // with this fee, tx is always accepted whatever size - 500 btcmz
-        const uint64_t ACCEPTABLE_FEE_V1                                    = UINT64_C(15000000);   // with this fee, tx is always accepted whatever size - 1500 btcmz
+        const uint64_t ACCEPTABLE_FEE                                       = UINT64_C(5000000);    // with this fee, tx is always accepted whatever size - 0.05 XCC
+        const uint64_t ACCEPTABLE_FEE_V1                                    = UINT64_C(15000000);   // with this fee, tx is always accepted whatever size - 0.15 XCC
 
         /* This section defines our minimum and maximum mixin counts required for transactions */
         const uint64_t MINIMUM_MIXIN_V1                                     = 0;
@@ -103,8 +103,8 @@ namespace CryptoNote
 
         /* The heights to activate the mixin limits at */
         const uint32_t MIXIN_LIMITS_V1_HEIGHT                               = 0;
-        const uint32_t MIXIN_LIMITS_V2_HEIGHT                               = 250000;
-        const uint32_t MIXIN_LIMITS_V3_HEIGHT                               = MIXIN_LIMITS_V2_HEIGHT;
+        const uint32_t MIXIN_LIMITS_V2_HEIGHT                               = 50000;
+        const uint32_t MIXIN_LIMITS_V3_HEIGHT                               = 250000;
 
         /* The mixin to use by default with zedwallet and turtle-service */
         /* DEFAULT_MIXIN_V0 is the mixin used before MIXIN_LIMITS_V1_HEIGHT is started */
@@ -119,43 +119,42 @@ namespace CryptoNote
         const uint32_t FUSION_DUST_THRESHOLD_HEIGHT_V2                      = 0;
         const uint64_t EXPECTED_NUMBER_OF_BLOCKS_PER_DAY                    = 24 * 60 * 60 / DIFFICULTY_TARGET;
 
-        const size_t DIFFICULTY_WINDOW                                      = 60;
-        const size_t DIFFICULTY_WINDOW_V1                                   = 60;
-        const size_t DIFFICULTY_WINDOW_V2                                   = 60;
+        const size_t   DIFFICULTY_WINDOW                                    = 60;
+        const size_t   DIFFICULTY_WINDOW_V1                                 = 60;
+        const size_t   DIFFICULTY_WINDOW_V2                                 = 60;
         const uint64_t DIFFICULTY_WINDOW_V3                                 = 60;
         const uint64_t DIFFICULTY_BLOCKS_COUNT                              = DIFFICULTY_WINDOW + 1;
         const uint64_t DIFFICULTY_BLOCKS_COUNT_V3                           = DIFFICULTY_WINDOW_V3 + 1;
-        const size_t DIFFICULTY_CUT                                         = 60;
-        const size_t DIFFICULTY_CUT_V1                                      = 60;
-        const size_t DIFFICULTY_CUT_V2                                      = 60;
-        const size_t DIFFICULTY_LAG                                         = 0;
-        const size_t DIFFICULTY_LAG_V1                                      = 0;
-        const size_t DIFFICULTY_LAG_V2                                      = 0;
+        const size_t   DIFFICULTY_CUT                                       = 60;
+        const size_t   DIFFICULTY_CUT_V1                                    = 60;
+        const size_t   DIFFICULTY_CUT_V2                                    = 60;
+        const size_t   DIFFICULTY_LAG                                       = 0;
+        const size_t   DIFFICULTY_LAG_V1                                    = 0;
+        const size_t   DIFFICULTY_LAG_V2                                    = 0;
         
-        const size_t MAX_BLOCK_SIZE_INITIAL                                 = 100000;
+        const size_t   MAX_BLOCK_SIZE_INITIAL                               = 100000;
         const uint64_t MAX_BLOCK_SIZE_GROWTH_SPEED_NUMERATOR                = 100 * 1024;
         const uint64_t MAX_BLOCK_SIZE_GROWTH_SPEED_DENOMINATOR              = 365 * 24 * 60 * 60 / DIFFICULTY_TARGET;
         const uint64_t MAX_EXTRA_SIZE                                       = 140000;
         const uint64_t MAX_EXTRA_SIZE_V2                                    = 1024;
         const uint64_t MAX_EXTRA_SIZE_V2_HEIGHT                             = 0;
 
-        /* 250 trillion atomic, or 2500 billion BTCMZ -> Max supply / mixin+1 outputs */
-        /* This is enforced on the daemon side. An output > 2'500 billion causes
-         * an invalid block. */
-        const uint64_t MAX_OUTPUT_SIZE_NODE                                 = 2'500'000'000'000'0000;
+        /* 1,000,000 XCC -> Max supply / mixin+1 outputs                 */
+        /* This is enforced on the daemon side. An output > 1,000,000 causes an invalid block.   */
+        const uint64_t MAX_OUTPUT_SIZE_NODE                                 = 1'000'000'00000000;
 
         /* 100000 billion atomic, or 10 billion BTCMZ */
         /* This is enforced on the client side. An output > 10 billion will not
          * be created in a transaction */
-        const uint64_t MAX_OUTPUT_SIZE_CLIENT                               = 10'000'000'000'0000;
-        const uint64_t MAX_OUTPUT_SIZE_HEIGHT                               = 2000000;
+        const uint64_t MAX_OUTPUT_SIZE_CLIENT                               = 500'000'00000000;
+        const uint64_t MAX_OUTPUT_SIZE_HEIGHT                               = 500000;
 
         /* For new projects forked from this code base, the values immediately below
            should be changed to 0 to prevent issues with transaction processing
            and other possible unexpected behavior */
-        const uint64_t TRANSACTION_SIGNATURE_COUNT_VALIDATION_HEIGHT        = 0;
-        const uint64_t BLOCK_BLOB_SHUFFLE_CHECK_HEIGHT                      = 0;
-        const uint64_t TRANSACTION_INPUT_BLOCKTIME_VALIDATION_HEIGHT        = 0;
+        const uint64_t TRANSACTION_SIGNATURE_COUNT_VALIDATION_HEIGHT        = 250;
+        const uint64_t BLOCK_BLOB_SHUFFLE_CHECK_HEIGHT                      = 250;
+        const uint64_t TRANSACTION_INPUT_BLOCKTIME_VALIDATION_HEIGHT        = 250;
 
         /* This describes how many blocks of "wiggle" room transactions have regarding
            when the outputs can be spent based on a reasonable belief that the outputs
@@ -175,32 +174,33 @@ namespace CryptoNote
            at any given time. Incoming fusion transactions that attempt to exceed this limit
            will be rejected from the pool and will not be added. This mechanism is in place
            to help curtail fusion transaction spam. */
-        const size_t FUSION_TX_MAX_POOL_COUNT                               = 20;
-        const size_t NORMAL_TX_MAX_OUTPUT_COUNT_V1                          = 90;
-        const size_t NORMAL_TX_MAX_OUTPUT_COUNT_V1_HEIGHT                   = 1000000;
-        const uint32_t UPGRADE_HEIGHT_V2                                    = 1;
+        const size_t   FUSION_TX_MAX_POOL_COUNT                             = 20;
+        const size_t   NORMAL_TX_MAX_OUTPUT_COUNT_V1                        = 90;
+        const size_t   NORMAL_TX_MAX_OUTPUT_COUNT_V1_HEIGHT                 = 250;
+        const uint32_t UPGRADE_HEIGHT_V2                                    = 1; 
         const uint32_t UPGRADE_HEIGHT_V3                                    = 2;
-        const uint32_t UPGRADE_HEIGHT_V4                                    = 3; // Upgrade height for CN-Lite Variant 1 switch.
-        const uint32_t UPGRADE_HEIGHT_V5                                    = 4; // Upgrade height for CN-Turtle Variant 2 switch.
-        const uint32_t UPGRADE_HEIGHT_V6                                    = 333000; // Upgrade height for Chukwa switch.
+        const uint32_t UPGRADE_HEIGHT_V4                                    = 3; 
+        const uint32_t UPGRADE_HEIGHT_V5                                    = 4;        // Upgrade height for CUSTOM_ALGO (TBA)
+        const uint32_t UPGRADE_HEIGHT_V6                                    = 216000;   // Upgrade height for CUSTOM_ALGO (TBA)
         const uint32_t UPGRADE_HEIGHT_CURRENT                               = UPGRADE_HEIGHT_V6;
-        const unsigned UPGRADE_VOTING_THRESHOLD                             = 90; // percent
-        const uint32_t UPGRADE_VOTING_WINDOW                                = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // blocks
-        const uint32_t UPGRADE_WINDOW                                       = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // blocks
+        const unsigned UPGRADE_VOTING_THRESHOLD                             = 90;       // percent
+        const uint32_t UPGRADE_VOTING_WINDOW                                = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // Blocks
+        const uint32_t UPGRADE_WINDOW                                       = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // Blocks
         
         static_assert(0 < UPGRADE_VOTING_THRESHOLD && UPGRADE_VOTING_THRESHOLD <= 100, "Bad UPGRADE_VOTING_THRESHOLD");
         static_assert(UPGRADE_VOTING_WINDOW > 1, "Bad UPGRADE_VOTING_WINDOW");
 
         /* Block heights we are going to have hard forks at */
         const uint64_t FORK_HEIGHTS[] = {
-            50000,  // fork to fix tx size and count bloat
-            333000, // fork to change mixin, Argon2id 
-            399000, // minimum fee 500 btcmz - or 5000000 atomic units
-            650000  // dynamic fee 
+            250,    // 0 ~ TRANSACTION_SIGNATURE_COUNT_VALIDATION, BLOCK_BLOB_SHUFFLE_CHECK, TRANSACTION_INPUT_BLOCKTIME_VALIDATION, NORMAL_TX_MAX_OUTPUT_COUNT_V1
+            50000,  // 1 ~ MIXIN LIMIT V2
+            216000, // 2 ~ Upgrade to new algo
+            250000, // 3 ~ MIXIN LIMIT V3
+            500000  // 4 ~ MAX_OUTPUT_SIZE
         };
 
         /* MAKE SURE TO UPDATE THIS VALUE WITH EVERY MAJOR RELEASE BEFORE A FORK - Count from 0 */
-        const uint64_t SOFTWARE_SUPPORTED_FORK_INDEX                        = 3;
+        const uint64_t SOFTWARE_SUPPORTED_FORK_INDEX                        = 1;
         const uint64_t FORK_HEIGHTS_SIZE                                    = sizeof(FORK_HEIGHTS) / sizeof(*FORK_HEIGHTS);
 
         /* The index in the FORK_HEIGHTS array that this version of the software will
