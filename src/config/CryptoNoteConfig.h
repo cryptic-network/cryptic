@@ -181,9 +181,9 @@ namespace CryptoNote
         const uint32_t UPGRADE_HEIGHT_V3                                    = 2;
         const uint32_t UPGRADE_HEIGHT_V4                                    = 3; 
         const uint32_t UPGRADE_HEIGHT_V5                                    = 4;        // Upgrade height for CUSTOM_ALGO (TBA)
-        const uint32_t UPGRADE_HEIGHT_V6                                    = 216000;   // Upgrade height for CUSTOM_ALGO (TBA)
+        const uint32_t UPGRADE_HEIGHT_V6                                    = 275000;   // Upgrade height for CUSTOM_ALGO (TBA)
         const uint32_t UPGRADE_HEIGHT_CURRENT                               = UPGRADE_HEIGHT_V6;
-        const unsigned UPGRADE_VOTING_THRESHOLD                             = 90;       // percent
+        const unsigned UPGRADE_VOTING_THRESHOLD                             = 90;       // Percentage
         const uint32_t UPGRADE_VOTING_WINDOW                                = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // Blocks
         const uint32_t UPGRADE_WINDOW                                       = EXPECTED_NUMBER_OF_BLOCKS_PER_DAY; // Blocks
         
@@ -194,37 +194,26 @@ namespace CryptoNote
         const uint64_t FORK_HEIGHTS[] = {
             250,    // 0 ~ TRANSACTION_SIGNATURE_COUNT_VALIDATION, BLOCK_BLOB_SHUFFLE_CHECK, TRANSACTION_INPUT_BLOCKTIME_VALIDATION, NORMAL_TX_MAX_OUTPUT_COUNT_V1
             50000,  // 1 ~ MIXIN LIMIT V2
-            216000, // 2 ~ Upgrade to new algo
-            250000, // 3 ~ MIXIN LIMIT V3
+            250000, // 2 ~ MIXIN LIMIT V3
+            275000, // 3 ~ Upgrade to new algo
             500000  // 4 ~ MAX_OUTPUT_SIZE
         };
 
         /* MAKE SURE TO UPDATE THIS VALUE WITH EVERY MAJOR RELEASE BEFORE A FORK - Count from 0 */
         const uint64_t SOFTWARE_SUPPORTED_FORK_INDEX                        = 1;
         const uint64_t FORK_HEIGHTS_SIZE                                    = sizeof(FORK_HEIGHTS) / sizeof(*FORK_HEIGHTS);
-
-        /* The index in the FORK_HEIGHTS array that this version of the software will
-           support. For example, if CURRENT_FORK_INDEX is 3, this version of the
-           software will support the fork at 600,000 blocks.
-
-           This will default to zero if the FORK_HEIGHTS array is empty, so you don't
-           need to change it manually. */
-
         const uint8_t CURRENT_FORK_INDEX                                    = FORK_HEIGHTS_SIZE == 0 ? 0 : SOFTWARE_SUPPORTED_FORK_INDEX;
         static_assert(CURRENT_FORK_INDEX >= 0, "CURRENT FORK INDEX must be >= 0");
-        /* Make sure CURRENT_FORK_INDEX is a valid index, unless FORK_HEIGHTS is empty */
-        static_assert(
-            FORK_HEIGHTS_SIZE == 0 || CURRENT_FORK_INDEX < FORK_HEIGHTS_SIZE,
-            "CURRENT_FORK_INDEX out of range of FORK_HEIGHTS!");
+        static_assert(FORK_HEIGHTS_SIZE == 0 || CURRENT_FORK_INDEX < FORK_HEIGHTS_SIZE, "CURRENT_FORK_INDEX out of range of FORK_HEIGHTS!");
 
         const char CRYPTONOTE_BLOCKS_FILENAME[]                             = "blocks.bin";
         const char CRYPTONOTE_BLOCKINDEXES_FILENAME[]                       = "blockindexes.bin";
         const char CRYPTONOTE_POOLDATA_FILENAME[]                           = "poolstate.bin";
         const char P2P_NET_DATA_FILENAME[]                                  = "p2pstate.bin";
         const char MINER_CONFIG_FILE_NAME[]                                 = "miner_conf.json";
-    } // namespace parameters
+    }
 
-    const char CRYPTONOTE_NAME[]                                            = "Cryptic";
+    const char    CRYPTONOTE_NAME[]                                         = "Cryptic";
     const uint8_t TRANSACTION_VERSION_1                                     = 1;
     const uint8_t TRANSACTION_VERSION_2                                     = 2;
     const uint8_t CURRENT_TRANSACTION_VERSION                               = TRANSACTION_VERSION_1;
@@ -249,23 +238,23 @@ namespace CryptoNote
             {BLOCK_MAJOR_VERSION_6, Crypto::chukwa_slow_hash}               /* UPGRADE_HEIGHT_V6 */
     };
 
-    const size_t BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT                     = 10000;    // by default, blocks ids count in synchronizing
+    const size_t  BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT                    = 10000;    // by default, blocks ids count in synchronizing
     const uint64_t BLOCKS_SYNCHRONIZING_DEFAULT_COUNT                       = 20;       // by default, blocks count in blocks downloading
-    const size_t COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT                      = 1000;
-    const int P2P_DEFAULT_PORT                                              = 17940;    // P2P Port
-    const int RPC_DEFAULT_PORT                                              = 17941;    // RPC Port
-    const int SERVICE_DEFAULT_PORT                                          = 17942;    // Service Port
-    const size_t P2P_LOCAL_WHITE_PEERLIST_LIMIT                             = 1000;
-    const size_t P2P_LOCAL_GRAY_PEERLIST_LIMIT                              = 5000;
+    const size_t  COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT                     = 1000;
+    const int     P2P_DEFAULT_PORT                                          = 17940;    // P2P Port
+    const int     RPC_DEFAULT_PORT                                          = 17941;    // RPC Port
+    const int     SERVICE_DEFAULT_PORT                                      = 17942;    // Service Port
+    const size_t  P2P_LOCAL_WHITE_PEERLIST_LIMIT                            = 1000;
+    const size_t  P2P_LOCAL_GRAY_PEERLIST_LIMIT                             = 5000;
 
     const uint8_t P2P_CURRENT_VERSION                                       = 1;    // Current version
     const uint8_t P2P_MINIMUM_VERSION                                       = 1;    // Minimum supported version
     const uint8_t P2P_UPGRADE_WINDOW                                        = 1;    // Version to upgrade from
 
     const uint8_t P2P_LITE_BLOCKS_PROPOGATION_VERSION                       = 0;
-    const size_t P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE                       = 32 * 1024 * 1024; // 32 MB
+    const size_t  P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE                      = 32 * 1024 * 1024; // 32 MB
     const uint32_t P2P_DEFAULT_CONNECTIONS_COUNT                            = 32;               // 32 Connections
-    const size_t P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT                  = 70;
+    const size_t  P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT                 = 70;
     const uint32_t P2P_DEFAULT_HANDSHAKE_INTERVAL                           = 60;               // 60 Seconds
     const uint32_t P2P_DEFAULT_PACKET_MAX_SIZE                              = 50000000;         // 50,000,000 bytes maximum packet size
     const uint32_t P2P_DEFAULT_PEERS_IN_HANDSHAKE                           = 250;
@@ -273,8 +262,8 @@ namespace CryptoNote
     const uint32_t P2P_DEFAULT_CONNECTION_TIMEOUT                           = 5000;             // 5 Seconds
     const uint32_t P2P_DEFAULT_PING_CONNECTION_TIMEOUT                      = 2000;             // 2 Seconds
     const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                               = 60 * 2 * 1000;    // 2 Minutes
-    const size_t P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT                       = 5000;             // 5 Seconds
-    const char P2P_STAT_TRUSTED_PUB_KEY[]                                   = "";
+    const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT                     = 5000;             // 5 Seconds
+    const char     P2P_STAT_TRUSTED_PUB_KEY[]                               = "";
 
 #if !defined(USE_LEVELDB)
     const uint64_t DATABASE_WRITE_BUFFER_MB_DEFAULT_SIZE                    = 256;  // 256 MB
@@ -288,8 +277,8 @@ namespace CryptoNote
     const uint32_t DATABASE_DEFAULT_MAX_OPEN_FILES                          = 128;  // 128 Files
     const uint16_t DATABASE_DEFAULT_BACKGROUND_THREADS_COUNT                = 8;    // 8 DB Threads
 #endif
-    const char LATEST_VERSION_URL[]                                         = "https://github.com/Cryptic/Cryptic/releases";
-    const std::string LICENSE_URL                                           = "https://github.com/Cryptic/Cryptic/blob/master/LICENSE";
+    const char LATEST_VERSION_URL[]                                         = "https://github.com/cryptic-network/cryptic/releases";
+    const std::string LICENSE_URL                                           = "https://github.com/cryptic-network/cryptic/blob/master/LICENSE";
 
     const static boost::uuids::uuid CRYPTONOTE_NETWORK = {
         {0xb2, 0x1d, 0x3b, 0x1d, 0x2d, 0x23, 0x22, 0x4a, 0x4a, 0x4a, 0xaa, 0xbb, 0xcc, 0xdd, 0xee, 0xff}};
