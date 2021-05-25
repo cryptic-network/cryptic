@@ -34,7 +34,7 @@ namespace CryptoNote
         // MONEY_SUPPLY - total number coins to be generated
         const uint64_t MONEY_SUPPLY                                         = UINT64_C(1'000'000'00000000); // 1 million XCC
         const uint64_t BLOCK_REWARD                                         = UINT64_C(1'00000000);         // 1.00000000 XCC
-        const uint64_t GENESIS_BLOCK_REWARD                                 = UINT64_C(100'000'00000000);   // 100,000.00000000 XCC (1%) Premine
+        const uint64_t GENESIS_BLOCK_REWARD                                 = UINT64_C(10'000'00000000);    // 10,000.00000000 XCC (1%) Premine
         const uint32_t ZAWY_DIFFICULTY_BLOCK_INDEX                          = 0;
         const size_t   ZAWY_DIFFICULTY_V2                                   = 0;
         const uint8_t  ZAWY_DIFFICULTY_DIFFICULTY_BLOCK_VERSION             = 3;
