@@ -90,8 +90,8 @@ namespace CryptoNote
         const uint64_t MINIMUM_FEE_PER_BYTE_V1_HEIGHT = 650000; // 650k
         
         /* Backward compatibility */
-        const uint64_t ACCEPTABLE_FEE                                       = UINT64_C(5000000);    // with this fee, tx is always accepted whatever size - 0.05 XCC
-        const uint64_t ACCEPTABLE_FEE_V1                                    = UINT64_C(15000000);   // with this fee, tx is always accepted whatever size - 0.15 XCC
+        const uint64_t ACCEPTABLE_FEE                                       = UINT64_C(500000);     // with this fee, tx is always accepted whatever size - 0.005 XCC
+        const uint64_t ACCEPTABLE_FEE_V1                                    = UINT64_C(500000);     // with this fee, tx is always accepted whatever size - 0.005 XCC
 
         /* This section defines our minimum and maximum mixin counts required for transactions */
         const uint64_t MINIMUM_MIXIN_V1                                     = 0;
