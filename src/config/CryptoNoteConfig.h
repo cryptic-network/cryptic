@@ -71,7 +71,7 @@ namespace CryptoNote
         static_assert(CRYPTONOTE_BLOCK_GRANTED_FULL_REWARD_ZONE * 30 / 100 < CRYPTONOTE_BLOCK_REDUCTION_SIZE, "Reduction is too small.");
 
         const size_t CRYPTONOTE_DISPLAY_DECIMAL_POINT                       = 8;
-        const uint64_t MINIMUM_FEE = UINT64_C(10000);
+        const uint64_t MINIMUM_FEE = UINT64_C(500000);
         
         /* New fee V2 */
         /* Fee per byte is rounded up in chunks. This helps makes estimates
