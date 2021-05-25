@@ -9,7 +9,7 @@ LICENSES:
 // Copyright (c) 2021, The Cryptic Developers
 ```
 
-[Website](http://crypticnetwork.cf) | [Discord](https://discord.gg/ZKpuEYwB9g) | [Bitcoin Talk](https://bitcointalk.org/index.php?topic=5339914)
+[Website](http://crypticnetwork.cf) | [Official Pool](http://pool.crypticnetwork.cf/) | [Official Block Explorer](http://explorer.crypticnetwork.cf/) | [Discord](https://discord.gg/ZKpuEYwB9g) | [Telegram](https://t.me/crypticnetwork) | [Bitcoin Talk](https://bitcointalk.org/index.php?topic=5339914)
 
 ![Download Count](https://img.shields.io/github/downloads/cryptic-network/cryptic/total.svg)
 ![Open Issue Count](https://img.shields.io/github/issues/cryptic-network/cryptic)
