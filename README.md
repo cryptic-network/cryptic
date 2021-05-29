@@ -15,7 +15,7 @@ LICENSES:
 ![Open Issue Count](https://img.shields.io/github/issues/cryptic-network/cryptic)
 ![Version](https://img.shields.io/github/v/release/cryptic-network/cryptic)
 
-****
+**** 
 
 ### Coin specifications:
 
